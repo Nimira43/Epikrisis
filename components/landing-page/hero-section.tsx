@@ -7,6 +7,9 @@ const LiveBadge = () => {
       variant='outline'
       className='px-4 py-2 mb-8 text-sm backdrop-blur-sm'
     >
+      <span className='relative flex h-2 w-2'>
+        <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75'></span>
+      </span>
       Become a part of the Epikrisis Community
     </Badge>
   )
