@@ -1,5 +1,11 @@
+import Link from 'next/link'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
+import StatsCard from './stats-section'
+import { AiOutlineProject } from 'react-icons/ai'
+import { LiaUsersSolid } from 'react-icons/lia';
+import { MdOutlineRemoveRedEye, MdOutlineShare } from 'react-icons/md'
+import { FiArrowRight } from 'react-icons/fi';
 
 const LiveBadge = () => {
   return (
@@ -16,6 +22,10 @@ const LiveBadge = () => {
   )
 }
 
+const statsData = [
+  {}
+]
+
 export default function HeroSection() {
   return (
     <section className='relative overflow-hidden bg-gray-100'>
@@ -24,8 +34,30 @@ export default function HeroSection() {
           <LiveBadge />
           <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6'>Empowering Developers to Share and Showcase Their Creations</h1>
           <p>Submit your coding concepts, refine them with community insight, and watch your project progress from proposal to approved entry in Epikrisis&apos; growing inventory.</p>
-          <Button>Share</Button>
-          <Button variant='outline'>Explore</Button>
+          <div className='flex flex-col sm:flex-row gap-4 mb-16'>
+            <Button
+              asChild
+              variant='outline'
+              size='lg'
+              className='text-base px-8 shadow-lg'
+            >
+              <Link href='/submit'>
+                <MdOutlineShare className='text-black' />
+                Share
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size='lg'
+              className='text-base px-8 shadow-lg'
+            >
+              <Link href='/explore'>
+                Explore
+                <FiArrowRight />
+              </Link>
+            </Button>
+          </div>
+          <StatsCard />
         </div>   
       </div>
     </section>
