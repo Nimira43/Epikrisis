@@ -185,3 +185,25 @@
     @apply flex items-center justify-between mb-6;
   }
 }
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee {
+    animation: marquee 25s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+
+  .marquee-reverse {
+    animation-direction: reverse;
+  }
+}

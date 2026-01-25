@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
-import StatsCard from './stats-section'
-import { AiOutlineProject } from 'react-icons/ai'
-import { LiaUsersSolid } from 'react-icons/lia';
-import { MdOutlineRemoveRedEye, MdOutlineShare } from 'react-icons/md'
-import { FiArrowRight } from 'react-icons/fi';
+import LogoScroller from './logo-scroller'
+import { MdOutlineShare } from 'react-icons/md'
+import { FiArrowRight } from 'react-icons/fi'
 
 const LiveBadge = () => {
   return (
@@ -22,10 +20,6 @@ const LiveBadge = () => {
   )
 }
 
-const statsData = [
-  {}
-]
-
 export default function HeroSection() {
   return (
     <section className='relative overflow-hidden bg-gray-100'>
@@ -34,7 +28,7 @@ export default function HeroSection() {
           <LiveBadge />
           <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6'>Empowering Developers to Share and Showcase Their Creations</h1>
           <p>Submit your coding concepts, refine them with community insight, and watch your project progress from proposal to approved entry in Epikrisis&apos; growing inventory.</p>
-          <div className='flex flex-col sm:flex-row gap-4 mb-16'>
+          <div className='flex flex-col sm:flex-row gap-4 mt-10 mb-16'>
             <Button
               asChild
               variant='outline'
@@ -57,7 +51,7 @@ export default function HeroSection() {
               </Link>
             </Button>
           </div>
-          <StatsCard />
+          <LogoScroller />
         </div>   
       </div>
     </section>
