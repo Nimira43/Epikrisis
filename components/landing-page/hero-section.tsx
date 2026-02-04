@@ -22,18 +22,18 @@ const LiveBadge = () => {
 
 export default function HeroSection() {
   return (
-    <section className='relative overflow-hidden bg-gray-100'>
+    <section className='relative overflow-hidden'>
       <div className='wrapper'>
         <div className='flex flex-col items-center justify-center lg:py-24 py-12 space-y-6 text-center'>
           <LiveBadge />
-          <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6'>Empowering Developers to Share and Showcase Their Creations</h1>
+          <h1 className='text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight mb-6'>Empowering Developers to Share and Showcase Their Creations</h1>
           <p>Submit your coding concepts, refine them with community insight, and watch your project progress from proposal to approved entry in Epikrisis&apos; growing inventory.</p>
           <div className='flex flex-col sm:flex-row gap-4 mt-10 mb-16'>
             <Button
               asChild
               variant='outline'
               size='lg'
-              className='text-base px-8 shadow-lg'
+              className='text-base px-8 shadow-sm'
             >
               <Link href='/submit'>
                 <MdOutlineShare className='text-black' />
@@ -51,6 +51,7 @@ export default function HeroSection() {
               </Link>
             </Button>
           </div>
+          <h1 className='text-2xl font-medium'>Our Clients...</h1>
           <LogoScroller />
         </div>   
       </div>
