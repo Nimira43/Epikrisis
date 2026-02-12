@@ -3,6 +3,8 @@ import SectionHeader from '../common/section-header'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
+import { featuredProjects } from '@/data/data'
+import ProjectCard from '../projects/project-card'
 
 export default function FeaturedProjects() {
   return (
@@ -25,10 +27,12 @@ export default function FeaturedProjects() {
           </Button>
         </div>
         <div className='grid-wrapper'>
-          <p>Featured Project 1</p>
-          <p>Featured Project 2</p>
-          <p>Featured Project 3</p>
-          <p>Featured Project 4</p>
+          {featuredProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
         </div>
       </div>
     </section>

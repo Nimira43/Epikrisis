@@ -31,12 +31,12 @@ export default function HeroSection() {
           <div className='flex flex-col sm:flex-row gap-4 mt-10 mb-16'>
             <Button
               asChild
-              variant='outline'
+              variant='support'
               size='lg'
               className='text-base px-8 shadow-sm'
             >
               <Link href='/submit'>
-                <MdOutlineShare className='text-black' />
+                <MdOutlineShare className='text-white' />
                 Share
               </Link>
             </Button>
