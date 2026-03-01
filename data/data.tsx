@@ -47,7 +47,29 @@ const featuredProjects = [
   },
 ]
 
+const recentlyLaunchedProjects = [
+  {
+    id: 1,
+    name: 'Pyroclastia',
+    description: 'Retro inspired space shooter',
+    tags: ['Game Dev', 'Godot'],
+    votes: 65,
+    isFeatured: false
+  },
+  {
+    id: 2,
+    name: 'Terraforge',
+    description: 'Procedural terrain generating application',
+    tags: ['Frontend', 'Three JS'],
+    votes: 818,
+    isFeatured: true
+  }
+]
+
+// const recentlyLaunchedProjects = []
+
 export {
   logos,
-  featuredProjects
+  featuredProjects,
+  recentlyLaunchedProjects
 } 

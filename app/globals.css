@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -145,6 +147,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.646 0.222 41.116);
+}
+
+.logo-font {
+  font-family: 'Tiny5', sans-serif;
+}
+
+.transitioning {
+  transition: all 0.5s ease-in-out;
 }
 
 @layer base {
