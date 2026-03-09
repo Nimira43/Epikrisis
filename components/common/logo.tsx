@@ -7,10 +7,10 @@ const Logo = () => {
       href='/'
       className='flex items-center gap-2 group'
     >
-      <div className='size-8 rounded-full bg-primary flex items-center justify-center'>
+      <div className='size-6 rounded-full bg-primary flex items-center justify-center'>
         <LuCodeXml className='size-4 text-white'/>
       </div>
-      <span className='logo-font text-primary text-3xl '>Epikrisis</span>
+      <span className='logo-font text-primary text-2xl mt-0.5 '>Epikrisis</span>
     </Link>
   )
 }

@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Logo from './logo'
-import { RiHomeHeartLine, RiCompassDiscoverLine } from 'react-icons/ri'
+import { RiHomeHeartLine, RiCompassDiscoverLine, RiUser6Line } from 'react-icons/ri'
 import { Button } from '../ui/button'
 
 export default function Header() {
+  const isSignedIn = false
   return (
     <header className='sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60'>
       <div className='wrapper px-12'>
@@ -24,12 +25,32 @@ export default function Header() {
               <RiCompassDiscoverLine className='size-4' />
               <span>Explore</span>
             </Link>
-            <div className='flex items-center gap-3'>
-              <Button asChild>
-                <Link href='/submit'>Upload Project</Link>
-              </Button>
-            </div>
           </nav>
+
+          <div className='flex items-center gap-3'>
+            {isSignedIn ? (
+              <>
+                <Button 
+                  asChild
+                  variant='ghost'
+                >
+                  <Link href='/submit'>Upload Project</Link>
+                </Button>
+                <Button variant='ghost'>
+                  <RiUser6Line />
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant='ghost'>
+                  Login
+                </Button>
+                <Button variant='ghost'>
+                  Register
+                </Button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </header>
