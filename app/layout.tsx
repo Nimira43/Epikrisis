@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/common/header'
 import Footer from '@/components/common/footer'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,7 +12,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Epikrisis',
-  description: 'Product management system using Next 16, Tailwind, Shadcn and Neon.',
+  description: 'Product management system using Next 16, Clerk, Tailwind, Shadcn and Neon.',
 }
 
 export default function RootLayout({
@@ -20,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={poppins.className}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en'>
+        <body className={poppins.className}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
