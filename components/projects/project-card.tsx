@@ -4,15 +4,10 @@ import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5'
 import { cn } from '@/lib/utils'
+import { InferSelectModel } from 'drizzle-orm'
+import { projects } from '@/db/schema'
 
-interface Project {
-  id: number
-  name: string
-  description: string
-  tags: string[]
-  votes: number
-  isFeatured: boolean
-}
+type Project = InferSelectModel<typeof projects>
 
 export default function ProjectCard({
   project
@@ -31,7 +26,7 @@ export default function ProjectCard({
                 <CardTitle className='text-lg group-hover:text-primary transition-colors'>
                   {project.name}
                 </CardTitle>
-                {project.isFeatured && (
+                {project.voteCount > 300 && (
                   <Badge className='bg-primary text-primary-foreground'>
                     Featured
                   </Badge>
@@ -56,7 +51,7 @@ export default function ProjectCard({
               </Button>
               <span className='text-sm font-semibold transition-colors text-foreground'
               >
-                10
+                {project.voteCount}
               </span>
               <Button
                 variant='outline'
@@ -75,7 +70,7 @@ export default function ProjectCard({
         </CardHeader>
         <CardFooter>
           <div className='flex items-center gap-2'>
-            {project.tags.map((tag) => (
+            {project.tags?.map((tag) => (
               <Badge key={tag} variant='support'>
                 {tag}
               </Badge>

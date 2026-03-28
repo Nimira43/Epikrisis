@@ -1,10 +1,12 @@
 import { CodeXml, AppWindow } from 'lucide-react'
 import SectionHeader from '../common/section-header'
-import { recentlyLaunchedProjects } from '@/data/data'
 import ProjectCard from '../projects/project-card'
 import EmptyState from '../common/empty-state'
+import { getRecentlyLaunchedProjects } from '@/lib/products/products.select'
 
-export default function RecentlyLaunchedProjects() {
+export default async function RecentlyLaunchedProjects() {
+  const recentlyLaunchedProjects = await getRecentlyLaunchedProjects()
+  
   return (
     <section className='py-20'>
       <div className='wrapper space-y-12'>

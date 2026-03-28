@@ -1,4 +1,4 @@
-import { logos } from '@/data/data'
+import { logos } from '@/db/data'
 import Image from 'next/image'
 
 export default function LogoScroller() {

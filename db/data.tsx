@@ -12,60 +12,6 @@ const logos = [
   '/logos/logo-11.png',
 ]
 
-const featuredProjects = [
-  {
-    id: 1,
-    name: 'Amphora',
-    description: 'Detailed frontend UI for e-commerce website.',
-    tags: ['Frontend', 'React', 'Tailwind'],
-    votes: 635,
-    isFeatured: false
-  },
-  {
-    id: 2,
-    name: 'Claros',
-    description: 'Websocket server application.',
-    tags: ['Backend', 'Express'],
-    votes: 818,
-    isFeatured: true
-  },
-  {
-    id: 3,
-    name: 'Gnosis',
-    description: 'Fully developed authentication system.',
-    tags: ['Fullstack', 'Next JS', 'Postgres'],
-    votes: 479,
-    isFeatured: true
-  },
-  {
-    id: 4,
-    name: 'Nexus II',
-    description: 'Powerful backend API.',
-    tags: ['Backend', 'Nest JS',],
-    votes: 594,
-    isFeatured: false
-  },
-]
-
-const recentlyLaunchedProjects = [
-  {
-    id: 1,
-    name: 'Pyroclastia',
-    description: 'Retro inspired space shooter',
-    tags: ['Game Dev', 'Godot'],
-    votes: 65,
-    isFeatured: false
-  },
-  {
-    id: 2,
-    name: 'Terraforge',
-    description: 'Procedural terrain generating application',
-    tags: ['Frontend', 'Three JS'],
-    votes: 818,
-    isFeatured: true
-  }
-]
-
 const allProjects = [
   {
     id: 1,
@@ -103,7 +49,7 @@ const allProjects = [
     slug: 'atlassia-map-generator',
     tagline: 'Procedural map generation with pure JavaScript',
     description:
-      'Atlassia is a random map generator built using Vanilla JavaScript and CSS. It creates dynamic, tile-based maps suitable for games, simulations, and creative tools, with customizable terrain rules.',
+      'Atlassia is a random map generator built using Vanilla JavaScript and CSS. It creates dynamic, tile-based maps suitable for games, simulations, and creative tools, with customisable terrain rules.',
     websiteUrl: 'https://github.com/example/atlassia',
     tags: ['JavaScript', 'Procedural Generation', 'CSS', 'Game Dev'],
     createdAt: new Date('2025-11-05'),
@@ -204,10 +150,7 @@ const allProjects = [
   },
 ]
 
-
 export {
   logos,
-  featuredProjects,
   allProjects,
-  recentlyLaunchedProjects
 } 
