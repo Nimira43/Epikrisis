@@ -69,7 +69,7 @@ export default function ProjectCard({
           </div>  
         </CardHeader>
         <CardFooter>
-          <div className='flex items-center gap-2'>
+          <div className='flex flex-wrap items-center justify-center gap-2 w-full'>
             {project.tags?.map((tag) => (
               <Badge key={tag} variant='support'>
                 {tag}

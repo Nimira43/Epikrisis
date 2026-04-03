@@ -48,7 +48,8 @@ export default function Footer() {
         </div>
 
         <div className='text-xs'>
-          © {new Date().getFullYear()} Epikrisis — All rights reserved.
+          {/* © {new Date().getFullYear()} Epikrisis — All rights reserved. */}
+          © 2026 Epikrisis — All rights reserved.
         </div>
       </div>
     </footer>

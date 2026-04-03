@@ -3,6 +3,7 @@ import Logo from './logo'
 import { RiHomeHeartLine, RiCompassDiscoverLine } from 'react-icons/ri'
 import { Button } from '../ui/button'
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { Suspense } from 'react'
 
 export default function Header() {
   return (
@@ -28,27 +29,31 @@ export default function Header() {
           </nav>
 
           <div className='flex items-center gap-3'>
-            <Show when='signed-out'>
-              <SignInButton>
-                <Button variant='ghost'>
-                  Login
+            <Suspense fallback={
+              <div>Loading...</div>
+            }>
+              `<Show when='signed-out'>
+                <SignInButton>
+                  <Button variant='ghost'>
+                    Login
+                  </Button>
+                </SignInButton>
+                <SignUpButton>
+                  <Button variant='ghost'>
+                    Register
+                  </Button>
+                </SignUpButton>
+              </Show>
+              <Show when='signed-in'>
+                <Button 
+                  asChild
+                  variant='ghost'
+                >
+                  <Link href='/submit'>Upload Project</Link>
                 </Button>
-              </SignInButton>
-              <SignUpButton>
-                <Button variant='ghost'>
-                  Register
-                </Button>
-              </SignUpButton>
-            </Show>
-            <Show when='signed-in'>
-              <Button 
-                asChild
-                variant='ghost'
-              >
-                <Link href='/submit'>Upload Project</Link>
-              </Button>
-              <UserButton />
-            </Show>
+                <UserButton />
+              </Show>
+            </Suspense>
           </div>
         </div>
       </div>

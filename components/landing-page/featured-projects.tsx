@@ -1,10 +1,12 @@
+'use cache'
+
 import { AppWindow } from 'lucide-react'
 import SectionHeader from '../common/section-header'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 import ProjectCard from '../projects/project-card'
-import { getFeaturedProjects } from '@/lib/products/products.select'
+import { getFeaturedProjects } from '@/lib/projects/projects.select'
 
 export default async function FeaturedProjects() {
   const featuredProjects = await getFeaturedProjects() 

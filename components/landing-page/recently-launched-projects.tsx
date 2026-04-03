@@ -1,8 +1,10 @@
+'use cache'
+
 import { CodeXml, AppWindow } from 'lucide-react'
 import SectionHeader from '../common/section-header'
 import ProjectCard from '../projects/project-card'
 import EmptyState from '../common/empty-state'
-import { getRecentlyLaunchedProjects } from '@/lib/products/products.select'
+import { getRecentlyLaunchedProjects } from '@/lib/projects/projects.select'
 
 export default async function RecentlyLaunchedProjects() {
   const recentlyLaunchedProjects = await getRecentlyLaunchedProjects()
