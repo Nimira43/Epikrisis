@@ -1,3 +1,5 @@
+'use cache'
+
 import { getFeaturedProjects } from '@/lib/projects/projects.select'
 
 export const generateStaticParams = async () => {

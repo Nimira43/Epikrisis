@@ -1,5 +1,3 @@
-'use cache'
-
 import { CodeXml, AppWindow } from 'lucide-react'
 import SectionHeader from '../common/section-header'
 import ProjectCard from '../projects/project-card'
