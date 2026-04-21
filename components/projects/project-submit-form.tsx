@@ -1,33 +1,50 @@
 'use client'
 
-import { Input } from '../ui/input'
-import { Label } from '../ui/label'
+import { FormField } from '../forms/form-field'
 
 export default function ProjectSubmitForm() {
   return (
     <form className='space-y-6'>
-      <div className='space-y-2'>
-        <Label htmlFor='name'>
-          Project Name
-        </Label>
-        <Input
-          id='name'
-          className='name'
-          required
-          onChange={() => {}}
-        />
-      </div>
-      <div className='space-y-2'>
-        <Label htmlFor='slug'>
-          Slug
-        </Label>
-        <Input
-          id='slug'
-          className='slug'
-          required
-          onChange={() => {}}
-        />
-      </div>
+      <FormField
+        label='Project Name'
+        name='name'
+        id='name'
+        required
+        onChange={() => { }}
+        error=''
+      />
+      <FormField
+        label='Slug'
+        name='slug'
+        id='slug'
+        required
+        onChange={() => { }}
+        error=''
+      />
+      <FormField
+        label='Tagline'
+        name='tagline'
+        id='tagline'
+        required
+        onChange={() => { }}
+        error=''
+      />
+      <FormField
+        label='Website URL'
+        name='websiteUrl'
+        id='websiteUrl'
+        required
+        onChange={() => { }}
+        error=''
+      />
+      <FormField
+        label='Tags'
+        name='tags'
+        id='tags'
+        required
+        onChange={() => { }}
+        error=''
+      />
     </form>
   )
 }
