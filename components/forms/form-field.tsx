@@ -1,5 +1,6 @@
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
+import { Textarea } from '../ui/textarea'
 
 interface FormFieldProps {
   label: string
@@ -7,9 +8,14 @@ interface FormFieldProps {
   id: string
   placeholder?: string
   required: boolean
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void
   error: string
   helperText?: string
+  textarea?: boolean
 }
 
 export const FormField = ({ 
@@ -20,20 +26,35 @@ export const FormField = ({
   required,
   onChange,
   error,
-  helperText
+  helperText,
+  textarea
 }: FormFieldProps) => {
   return (
     <div className='space-y-2'>
       <Label htmlFor={id}>
         {label}
       </Label>
-      <Input
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        required={required}
-        onChange={onChange}
-      />
+      {textarea ? (
+        <Textarea
+          id={id}
+          name={name}
+          placeholder={placeholder}
+          required={required}
+          onChange={
+            onChange as (e: React.ChangeEvent<HTMLTextAreaElement>) => void
+          }
+        />  
+      ) : (
+        <Input
+          id={id}
+          name={name}
+          placeholder={placeholder}
+          required={required}
+          onChange={
+            onChange as (e: React.ChangeEvent<HTMLInputElement>) => void
+          }
+        />    
+      )}
       {helperText && (
         <p className='text-xs text-muted-foreground'>
           {helperText}
