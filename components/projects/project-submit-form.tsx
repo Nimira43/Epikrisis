@@ -1,11 +1,18 @@
 'use client'
 
+import { addProject } from '@/lib/projects/project-actions'
 import { FormField } from '../forms/form-field'
 import { Button } from '../ui/button'
 
 export default function ProjectSubmitForm() {
+  const handleSubmit = async (formData: FormData) => {
+    await addProject(formData)
+  }
   return (
-    <form className='space-y-6'>
+    <form
+      className='space-y-6'
+      action={handleSubmit}
+    >
       <FormField
         label='Project Name'
         name='name'

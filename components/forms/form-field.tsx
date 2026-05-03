@@ -62,7 +62,7 @@ export const FormField = ({
       )}
       {error && (
         <p className='text-sm text-priamry'>
-          {}
+          {error}
         </p>
       )}
     </div>
