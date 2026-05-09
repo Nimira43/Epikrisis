@@ -1,17 +1,27 @@
 'use client'
 
-import { addProject } from '@/lib/projects/project-actions'
+import { Loader2Icon } from 'lucide-react'
+import { addProjectAction } from '../../lib/projects/project-actions'
 import { FormField } from '../forms/form-field'
 import { Button } from '../ui/button'
+import { useActionState } from 'react'
+
+const initialState = {
+  success: false,
+  error: {},
+  message: ''
+}
 
 export default function ProjectSubmitForm() {
-  const handleSubmit = async (formData: FormData) => {
-    await addProject(formData)
-  }
+  const [state, formAction, isPending] = useActionState(
+    addProjectAction,
+    initialState
+  )
+
   return (
     <form
       className='space-y-6'
-      action={handleSubmit}
+      action={formAction}
     >
       <FormField
         label='Project Name'
@@ -73,7 +83,11 @@ export default function ProjectSubmitForm() {
         size='lg'
         className='w-full'
       >
-        Submit Project
+        {isPending ? (
+          <Loader2Icon className='size-4 animate-spin' />
+        ) : (
+          <span>Submit Project</span>  
+        )}
       </Button>
     </form>
   )
