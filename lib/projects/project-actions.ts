@@ -1,5 +1,7 @@
 'use server'
 
+import { auth } from '@clerk/nextjs/server'
+
 type FormState = {
   success: boolean
   errors?: Record<string, string[]>
@@ -10,11 +12,27 @@ export const addProjectAction = async (
   prevState: FormState,
   formData: FormData
 ) => {
-  console.log(formData)
+  
+  try {
+    const { userId } = await auth()
+    
+    if (!userId) {
+      return {
+        success: false,
+        message: 'You must be logged in to submit a project.'
+      }
+    }
 
-  return {
-    success: true,
-    errors: {},
-    messages: 'Project added successfully.'
+    const rawFormData = Object.fromEntries(formData.entries())
+
+
+  } catch (error) {
+    console.error(error)
+
+    return {
+      success: false,
+      errors: error,
+      messages: 'Failed to submit project.'
+    }
   }
 }
