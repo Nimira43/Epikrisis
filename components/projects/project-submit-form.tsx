@@ -17,7 +17,7 @@ export default function ProjectSubmitForm() {
     addProjectAction,
     initialState
   )
-
+  const { errors, message, success} = state
   return (
     <form
       className='space-y-6'
@@ -30,7 +30,7 @@ export default function ProjectSubmitForm() {
         placeholder='My Project'
         required
         onChange={() => { }}
-        error=''
+        error={errors?.name}
       />
       <FormField
         label='Slug'
@@ -39,7 +39,7 @@ export default function ProjectSubmitForm() {
         placeholder='my-project'
         required
         onChange={() => { }}
-        error=''
+        error={errors?.slug}
       />
       <FormField
         label='Tagline'
@@ -48,7 +48,7 @@ export default function ProjectSubmitForm() {
         placeholder='A catchy tagline for your project'
         required
         onChange={() => { }}
-        error=''
+        error={errors?.tagline}
       />
       <FormField
         label='Description'
@@ -57,7 +57,7 @@ export default function ProjectSubmitForm() {
         placeholder='A brief description about your project'
         required
         onChange={() => { }}
-        error=''
+        error={errors?.description}
         textarea
       />
       <FormField
@@ -67,7 +67,7 @@ export default function ProjectSubmitForm() {
         placeholder='https://my-project.com'
         required
         onChange={() => { }}
-        error=''
+        error={errors?.websiteUrl}
       />
       <FormField
         label='Tags'
@@ -76,7 +76,7 @@ export default function ProjectSubmitForm() {
         placeholder='Frontend, Backend, Game Dev'
         required
         onChange={() => { }}
-        error=''
+        error={errors?.tags}
       />
       <Button
         type='submit'

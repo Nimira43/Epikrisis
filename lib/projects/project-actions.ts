@@ -1,6 +1,7 @@
 'use server'
 
 import { auth } from '@clerk/nextjs/server'
+import { projectSchema } from './project-validations'
 
 type FormState = {
   success: boolean
@@ -24,7 +25,18 @@ export const addProjectAction = async (
     }
 
     const rawFormData = Object.fromEntries(formData.entries())
+    const validatedData = projectSchema.safeParse(rawFormData)
 
+    if (!validatedData.success) {
+      console.log(validatedData.error.flatten().fieldErrors)
+      return {
+        success: false,
+        errors: validatedData.error.flatten().fieldErrors,
+        message: 'Invalid data'
+      }
+    }
+
+    const data = validatedData.data
 
   } catch (error) {
     console.error(error)
@@ -32,7 +44,7 @@ export const addProjectAction = async (
     return {
       success: false,
       errors: error,
-      messages: 'Failed to submit project.'
+      message: 'Failed to submit project.'
     }
   }
 }
