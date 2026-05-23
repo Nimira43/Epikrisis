@@ -8,7 +8,7 @@ import { useActionState } from 'react'
 
 const initialState = {
   success: false,
-  error: {},
+  errors: {},
   message: ''
 }
 
